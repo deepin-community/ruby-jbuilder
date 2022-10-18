@@ -1,0 +1,33 @@
+Source: ruby-jbuilder
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Cédric Boutillier <boutil@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               gem2deb,
+               rails,
+               ruby-activesupport (>= 2:4.2.0),
+               ruby-mocha (>= 0.13~),
+               ruby-multi-json (>= 1.2)
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-jbuilder.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-jbuilder
+Homepage: https://github.com/rails/jbuilder
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-jbuilder
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-activesupport (>= 2:4.2.0),
+         ruby-multi-json (>= 1.2),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: creation of JSON structures via a Builder-style DSL
+ Jbuilder gives you a simple domain-specific language in Ruby for declaring
+ JSON structures that beats massaging giant hash structures. It is particularly
+ helpful when the generation process is fraught with conditionals and loops.
+ .
+ Jbuilder can be used stand-alone or as an ActionView template language for
+ Rails.
